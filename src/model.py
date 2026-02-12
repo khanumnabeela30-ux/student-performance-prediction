@@ -30,7 +30,9 @@ print(data.describe())
 plt.figure()
 sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Correlation Matrix")
+plt.savefig("../correlation_matrix.png", bbox_inches="tight")
 plt.show()
+
 
 # ----------------------
 # Model Preparation
@@ -103,6 +105,8 @@ print(feature_importance.sort_values(ascending=False))
 plt.figure()
 feature_importance.sort_values().plot(kind='barh')
 plt.title("Feature Importance (Random Forest)")
+plt.savefig("../feature_importance.png", bbox_inches="tight")
+
 plt.show()
 
 # ----------------------
@@ -115,6 +119,8 @@ plt.xlabel("Actual Scores")
 plt.ylabel("Predicted Scores")
 plt.title("Actual vs Predicted Scores (Random Forest)")
 plt.show()
+plt.savefig("../actual_vs_predicted.png", bbox_inches="tight")
+
 
 residuals = y_test - rf_predictions
 
@@ -125,3 +131,5 @@ plt.xlabel("Predicted Scores")
 plt.ylabel("Residuals")
 plt.title("Residual Plot (Random Forest)")
 plt.show()
+plt.savefig("../residual_plot.png", bbox_inches="tight")
+
