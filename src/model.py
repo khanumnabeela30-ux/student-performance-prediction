@@ -32,6 +32,7 @@ sns.heatmap(data.corr(), annot=True, cmap="coolwarm", fmt=".2f")
 plt.title("Correlation Matrix")
 plt.savefig("../correlation_matrix.png", bbox_inches="tight")
 plt.show()
+plt.close()
 
 
 # ----------------------
@@ -118,8 +119,10 @@ plt.scatter(y_test, rf_predictions)
 plt.xlabel("Actual Scores")
 plt.ylabel("Predicted Scores")
 plt.title("Actual vs Predicted Scores (Random Forest)")
-plt.show()
 plt.savefig("../actual_vs_predicted.png", bbox_inches="tight")
+plt.show()
+plt.close()
+
 
 
 residuals = y_test - rf_predictions
@@ -130,6 +133,8 @@ plt.axhline(y=0)
 plt.xlabel("Predicted Scores")
 plt.ylabel("Residuals")
 plt.title("Residual Plot (Random Forest)")
-plt.show()
 plt.savefig("../residual_plot.png", bbox_inches="tight")
+plt.show()
+plt.close()
+
 
